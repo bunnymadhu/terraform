@@ -1,1 +1,8 @@
 # terraform
+
+# Ansible vs Terraform
+# Ansible is a configuration management tool that executes playbooks, which are lists of customizable actions written in YAML on specified target servers. It can perform all bootstrapping operations, like installing and updating software, creating and removing users, and configuring system services. As such, it is suitable for bringing up servers you deploy using Terraform, which are created blank by default.
+
+# Ansible and Terraform are not competing solutions, because they resolve different phases of infrastructure and software deployment. Terraform allows you to define and create the infrastructure of your system, encompassing the hardware that your applications will run on. Conversely, Ansible configures and deploys software by executing its playbooks on the provided server instances. Running Ansible on the resources Terraform provisioned directly after their creation allows you to make the resources usable for your use case much faster. It also enables easier maintenance and troubleshooting, because all deployed servers will have the same actions applied to them.
+
+# In this tutorial, you’ll deploy Droplets using Terraform, and then immediately after their creation, you’ll bootstrap the Droplets using Ansible. You’ll invoke Ansible directly from Terraform when a resource deploys. You’ll also avoid introducing race conditions using Terraform’s remote-exec and local-exec provisioners in your configuration, which will ensure that the Droplet deployment is fully complete before further setup commences.
