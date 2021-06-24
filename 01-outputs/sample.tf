@@ -10,3 +10,7 @@ output "sample" {
 output "sample1" {
   value = "Hello World1"
 }
+
+variable "sample" {
+  default = "hai everyone"
+}
