@@ -1,5 +1,6 @@
 output "sample" {
-  value = "Hello World"
+  //value = "Hello World"
+  value = var.sample
 }
 
 ## terraform init
