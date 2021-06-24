@@ -50,7 +50,7 @@ variable "sample4" {
 }
 
 output "sample4" {
-  value = "var.sample4[1]"
+  value = var.sample4[1]
 }
 # here 0 means first line(Hai),1 means Second line (1000)....
 variable "sample5" {
