@@ -64,3 +64,10 @@ variable "sample5" {
 output "sample5" {
   value = var.sample5["boolean"]
 }
+## in Amazon  100 and more services are there,,Terraform will handle with all those services
+
+variable "sample6" {}
+
+output "sample6" {
+  value = var.sample6
+}
