@@ -73,4 +73,11 @@ output "sample6" {
 }
 
 variable "ENV" {}
+
+output "ENV" {
+  value = var.ENV
+}
+
+
+
 ##  u have to exclusivly tell that in putty
