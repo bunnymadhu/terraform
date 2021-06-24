@@ -78,6 +78,8 @@ output "ENV" {
   value = var.ENV
 }
 
-
-
-##  u have to exclusivly tell that in putty
+##  u have to exclusivly tell that in putty git pull ; terraform apply -auto-approve -var-file=dev.tfvars
+## if any changes are added so edit like this  export IF_VAR_ENV=any name(MADHU or DEvOps) any name will add to that command then  git pull ; terraform apply -auto-approve
+## Variable types -- Default type,List type,Map variable type..
+## Terraform supports  200+ providers(registery.terraform.IO website u can check privders)...if u work aws provider and u wrk in another provider at the same time,then u have to mention as "alias"
+## in terraform keys is called as arguments,and values is called as attributes
