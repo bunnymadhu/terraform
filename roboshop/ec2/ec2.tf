@@ -23,8 +23,9 @@ resource "time_sleep" "wait" {
 
 resource "aws_ec2_tag" "spot" {
   count                                  = length(var.COMPONENTS)
-  resource_id                        = element(aws_spot_instance_request.cheap_worker.*.spot_instance_id, count.index)
-  key                                    = "Name"
-  value                                  = element(var.COMPONENTS, count.index)
+  resource_id                         = element(aws_spot_instance_request.cheap_worker.*.spot_instance_id, count.index)
+  key                                     = "Name"
+  value                                   = element(var.COMPONENTS, count.index)
 }
+
 ## here * means it is list so 10 instances created it is going to be all the spot instances will create as a list..
