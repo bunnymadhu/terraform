@@ -23,6 +23,9 @@ resource "aws_security_group" "allow_ssh" {
   }
 }
 
+## in terraform if u want to show only securitygroup that syntax is terraform apply -auto-approve -target=module.securitygroup
+## so -target=      whatever u want to show u cn add that name in that -target=.....
+
 output "sg_id" {
   value = aws_security_group.allow_ssh.id
 }
