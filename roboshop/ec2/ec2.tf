@@ -4,7 +4,7 @@ resource "aws_spot_instance_request" "cheap_worker" {
   spot_price                               = "0.0036"
   instance_type                          = "t2.micro"
 
-  tags = {
+  tags                                       = {
     Name                                   = element(var.COMPONENTS, count.index)
   }
   }
