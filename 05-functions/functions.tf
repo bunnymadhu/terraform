@@ -16,6 +16,6 @@ output "number_of_fruits" {
 ## > length("hello")
 ## 5
 
-output "fruit value" {
+output "fruit-value" {
   value = element(var.fruits, 0)
 }
