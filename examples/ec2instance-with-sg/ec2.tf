@@ -40,3 +40,5 @@ resource "aws_security_group" "allow_ssh" {
     Name = "allow_ssh "
   }
 }
+
+## even though if you create one new  instance in  aws,and create another one and in that  one changes manually  security group id and  give terraform-apply it can overwrites the older secrity group id..terraform automatucally overwrites the id....
