@@ -24,3 +24,5 @@ resource "null_resource" "ansible-apply" {
 variable "COMPONENTS" {
   default = ["frontend", "mongodb", "catalogue", "redis", "user", "cart", "mysql", "shipping", "rabbitmq", "payment"]
 }
+
+## here triggers will help to the re-run that particular Null_resource if that abc value changing  it will  re-apply once again...marking as change it so that it run evrytime...
