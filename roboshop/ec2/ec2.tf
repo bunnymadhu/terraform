@@ -23,6 +23,7 @@ resource "time_sleep" "wait" {
 ## we can give time here for to create instances at that particular names...means var.COMPONENTS
 
 resource "aws_ec2_tag" "spot" {
+  depends_on                        = [time_sleep.wait]
   count                                  = length(var.COMPONENTS)
   resource_id                         = element(aws_spot_instance_request.cheap_worker.*.spot_instance_id, count.index)
   key                                     = "Name"
@@ -32,6 +33,7 @@ resource "aws_ec2_tag" "spot" {
 ## here * means it is list so 10 instances created it is going to be all the spot instances will create as a list..
 
 resource "aws_route53_record" "dns" {
+  depends_on                        = [time_sleep.wait]
   count                                  = length(var.COMPONENTS)
   zone_id                               = "Z03444518JCZ2U6FF5S6"
   name                                  = "${element(var.COMPONENTS, count.index)}.roboshop.internal"
