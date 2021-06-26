@@ -6,7 +6,7 @@ resource "null_resource" "ansible-apply" {
   provisioner "remote-exec" {
 
     connection {
-      host                              = "${element(var.COMPONENTS, count.index)},roboshop.internal"
+      host                              = "${element(var.COMPONENTS, count.index)}.roboshop.internal"
       user                              = "centos"
       password                       = "DevOps321"
     }
