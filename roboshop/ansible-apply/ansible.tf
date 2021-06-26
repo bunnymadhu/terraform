@@ -11,7 +11,9 @@ resource "null_resource" "ansible-apply" {
         "sudo yum install ansible -y",
         "sudo yum remove ansible -y",
         "sudo pip install ansible==3.4.0",
+        "ansible-pull -U https://github.com/bunnymadhu/ansible.git roboshop-pull.yml -e COMPONENT=${element(var.COMPONENTS, count.index)}"
       ]
+
   }
 }
 
