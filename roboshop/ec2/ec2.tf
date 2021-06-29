@@ -40,6 +40,8 @@ resource "aws_ec2_tag" "monitor" {
   value                                   = "yes"
 }
 
+## if you want to monitor any instance then keep tag in monitor=yes and here u want write above script...and apply -auto-approve it will reflectd to want we want to monitor..
+
 resource "aws_route53_record" "dns" {
   depends_on                        = [time_sleep.wait]
   count                                  = length(var.COMPONENTS)
