@@ -14,15 +14,14 @@ resource "null_resource" "ansible-apply" {
         "sudo yum install ansible -y",
         "sudo yum remove ansible -y",
         "sudo rm -rf /usr/lib/python2.7/site-packages/ansible*",
-        "sudo pip install ansible",
-        "ansible-pull -i localhost,  -U https://github.com/bunnymadhu/ansible.git roboshop-pull.yml -e COMPONENT=${element(var.COMPONENTS, count.index)}"
+        "sudo pip install ansible==4.1.0",
+        "ansible-pull -i localhost, -U https://github.com/bunnymadhu/ansible.git roboshop-pull.yml -e COMPONENT=${element(var.COMPONENTS, count.index)}"
       ]
 
   }
 }
 
-variable "COMPONENTS" {
-  default = ["frontend", "mongodb", "catalogue", "redis", "user", "cart", "mysql", "shipping", "rabbitmq", "payment"]
-}
+variable "COMPONENTS" {}
+
 
 ## here triggers will help to the re-run that particular Null_resource if that abc value changing  it will  re-apply once again...marking as change it so that it run evrytime...
